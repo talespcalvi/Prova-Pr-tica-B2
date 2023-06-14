@@ -73,7 +73,7 @@ function checarSenha() {
 
 // Função para calcular fatorial 
 
-function calcularFatorial {
+function calcularFatorial() {
     var numero = parseInt(prompt('Digite seu número'))
 
     function calcular(numero) {
@@ -86,4 +86,42 @@ function calcularFatorial {
 
     var fatorial = calcular(numero);
     alert ("O fatorial de " + numero + " é " + fatorial);
+}
+
+function listarFatorial() {
+    var resultados = [];
+
+    for (var numero = 1; numero <= 10; numero++) {
+        function Fatorial(numero) {
+            if (numero === 0 || numero === 1) {
+                return 1;
+            } else {
+                return numero * Fatorial(numero - 1);
+            }
+        }
+
+        var fatorial = Fatorial(numero);
+        resultados.push("O fatorial de " + numero + " é " + fatorial)
+    }
+
+    alert (resultados.join("\n"));
+}
+
+// Função para checar se é ou não um quadrado perfeito
+
+function quadradoPerfeito() {
+    var numero = parseInt(prompt("Digite seu número"))
+
+    if (numero < 0){
+        alert ( numero + " não é um quadrado perfeito")
+        return false;
+    }
+
+    if (Math.sqrt(numero) === Math.floor(Math.sqrt(numero))) {
+        alert ( numero + " é um quadrado perfeito")
+        return true;
+    } else {
+        alert ( numero + " não é um quadrado perfeito")
+        return false;
+    }
 }
